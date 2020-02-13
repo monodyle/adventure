@@ -6,7 +6,7 @@ function almostIncreasingSequence(sequence: number[]): boolean {
       console.log(flag)
       if (flag > 1)
         return false
-      if (sequence[i] <= sequence[i-2] && sequence[i+1] <= sequence[i-1])
+      if (sequence[i] <= sequence[i - 2] && sequence[i + 1] <= sequence[i - 1])
         return false
     }
   }
