@@ -28,5 +28,7 @@ I challenged myself to find solution for the algorithms on popular codefight web
 * [arrayChange](codesignal/01-arcade/04-exploring-the-waters/17-arrayChange)
 * [palindromeRearranging](codesignal/01-arcade/04-exploring-the-waters/18-palindromeRearranging)
 * [areEquallyStrong](codesignal/01-arcade/05-island-of-knowledge/19-areEquallyStrong)
+* [arrayMaximalAdjacentDifference](codesignal/01-arcade/05-island-of-knowledge/20-arrayMaximalAdjacentDifference)
+* [isIPv4Address](codesignal/01-arcade/05-island-of-knowledge/21-isIPv4Address)
 
 Code with 💖
