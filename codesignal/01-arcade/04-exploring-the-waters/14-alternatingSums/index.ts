@@ -6,8 +6,7 @@
  *  For `[50, 60, 60, 45, 70]`, the output should be `[180, 105]`
  */
 
-function alternatingSums(a: number[]): number[] {
-  return a.reduce((sums, i, p) => (sums[p & 1] += i, sums), [0, 0])
-}
+const alternatingSums = (a: number[]): number[] =>
+  a.reduce((sums, i, p) => (sums[p & 1] += i, sums), [0, 0])
 
 export { alternatingSums }
