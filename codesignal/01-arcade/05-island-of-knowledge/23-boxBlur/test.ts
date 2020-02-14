@@ -1,5 +1,4 @@
 import { boxBlur } from './index'
-let array = require('lodash/array')
 
 let testCase = [
   {
