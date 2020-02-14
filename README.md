@@ -30,5 +30,8 @@ I challenged myself to find solution for the algorithms on popular codefight web
 * [areEquallyStrong](codesignal/01-arcade/05-island-of-knowledge/19-areEquallyStrong)
 * [arrayMaximalAdjacentDifference](codesignal/01-arcade/05-island-of-knowledge/20-arrayMaximalAdjacentDifference)
 * [isIPv4Address](codesignal/01-arcade/05-island-of-knowledge/21-isIPv4Address)
+* [avoidObstacles](codesignal/01-arcade/05-island-of-knowledge/22-avoidObstacles)
+* [boxBlur](codesignal/01-arcade/05-island-of-knowledge/23-boxBlur)
+* [minesweeper](codesignal/01-arcade/05-island-of-knowledge/24-minesweeper)
 
 Code with 💖
