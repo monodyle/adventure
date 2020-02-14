@@ -15,7 +15,7 @@ let testCase = [
 
 testCase.forEach(i => {
   let result = allLongestStrings(i.input)
-  let passed = result.every(e => i.result.includes(e)) && i.result.every((e)=> result.includes(e))
+  let passed = result.every(e => i.result.includes(e)) && i.result.every((e) => result.includes(e))
   console.log(`${i.input} => ${result} [${passed ? '✔ Passed' : '❌ Fail'}]`)
   if (!passed)
     console.log(`Want: ${typeof i.result} || Given: ${typeof result}`)
