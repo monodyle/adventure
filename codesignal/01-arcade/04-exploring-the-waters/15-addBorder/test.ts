@@ -1,5 +1,5 @@
 import { addBorder } from './index'
-var array = require('lodash/array');
+let array = require('lodash/array')
 
 let testCase = [
   {input: ["abc", "ded"], result: ["*****", "*abc*", "*ded*", "*****"]},

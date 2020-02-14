@@ -1,5 +1,5 @@
 import { alternatingSums } from './index'
-var array = require('lodash/array');
+let array = require('lodash/array')
 
 let testCase = [
   {input: [50, 60, 60, 45, 70], result: [180, 105]},
