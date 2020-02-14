@@ -11,7 +11,7 @@
  */
 
 const isIPv4Address = (input: string): boolean => {
-  return /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.\1\.\1\.\1$/.test(input)
+  return /^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/.test(input)
 }
 
 export { isIPv4Address }
