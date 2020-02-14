@@ -4,7 +4,7 @@ This repository is my adventure of algorithms write in TypeScript,
 I challenged myself to find solution for the algorithms on popular codefight websites.
 
 ## Contents
-
+****
 #### CodeSignal
 
 **Aracde:**
@@ -27,5 +27,6 @@ I challenged myself to find solution for the algorithms on popular codefight web
 * [areSimilar](codesignal/01-arcade/04-exploring-the-waters/16-areSimilar)
 * [arrayChange](codesignal/01-arcade/04-exploring-the-waters/17-arrayChange)
 * [palindromeRearranging](codesignal/01-arcade/04-exploring-the-waters/18-palindromeRearranging)
+* [areEquallyStrong](codesignal/01-arcade/05-island-of-knowledge/19-areEquallyStrong)
 
 Code with 💖
