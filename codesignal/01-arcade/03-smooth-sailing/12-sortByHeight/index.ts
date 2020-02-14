@@ -6,12 +6,10 @@
  */
 
 function sortByHeight(a: number[]): number[] {
-  const normalSort: Array<number> = a.filter(i => i != -1).sort((a, b) => a - b)
-  let flag: number = 0
-  a.forEach(i => {
-    if (i != -1) i = normalSort[flag++]
+  const normalSort: Array<number> = a.filter(i => i !== -1).sort((a, b) => a - b)
+  return a.map(i => {
+    return (i !== -1) normalSort.shift() : -1
   })
-  return a
 }
 
 export { sortByHeight }
