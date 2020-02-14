@@ -1,5 +1,4 @@
 import { areSimilar } from './index'
-var array = require('lodash/array');
 
 let testCase = [
   {a: [1, 2, 3], b: [1, 2, 3], result: true},
