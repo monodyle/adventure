@@ -4,7 +4,7 @@ This repository is my adventure of algorithms write in TypeScript,
 I challenged myself to find solution for the algorithms on popular codefight websites.
 
 ## Contents
-****
+
 #### CodeSignal
 
 **Aracde:**
@@ -33,5 +33,9 @@ I challenged myself to find solution for the algorithms on popular codefight web
 * [avoidObstacles](codesignal/01-arcade/05-island-of-knowledge/22-avoidObstacles)
 * [boxBlur](codesignal/01-arcade/05-island-of-knowledge/23-boxBlur)
 * [minesweeper](codesignal/01-arcade/05-island-of-knowledge/24-minesweeper)
+
+#### LeetCode
+
+* [68. Text Justification (textJustify)](leetcode-problems/68-textJustify)
 
 Code with 💖
