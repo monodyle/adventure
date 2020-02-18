@@ -47,7 +47,7 @@ function textJustification(words: string[], l: number): string[] {
     result.push(parseLine())
     currentLine.length = 0
     currentLength = 0
-    addWord(word);
+    addWord(word)
   }
 
   // Last line wasn't parsed, sad :(
