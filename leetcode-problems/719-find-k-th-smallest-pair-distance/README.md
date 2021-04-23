@@ -9,7 +9,9 @@ complexity.
 
 ![Brute force](./brute-force.png)
 
-I've reach TLE when use this way... That mean we need to find another way.
+But I've reach TLE when use this way... That mean I need to find another way.
+
+![TLE](./tle.png)
 
 Imagine we can sort the array of distances of all pair. That will look like:
 `[0, 1, 1, ..., x-1, x, x+1, x+1, ...]` where `x` is the `k`th smallest
@@ -19,12 +21,10 @@ distance. Should be the `x` if:
 * (Count of smaller than `x`) + (Count of same as `x`) >= `k`
 
 Example: Give a array of distance `[0, 1, 2, 2 ,2, 4, 5]`, `5`th smallest is
-`2`. There are 3 numbers smaller, and 2 numbers same. 3 + 2 >= 5 (true - Hold)
+`2`. There are 3 numbers smaller, and 2 numbers same. 3 + 2 >= 5 (true)
 
 From the meaning of question, result must exist in range [`low`, `high`]. We
 could use binary search to count numbers of distance smaller or equal to `mid`.
-
-![TLE](./tle.png)
 
 ## 2. Example
 
