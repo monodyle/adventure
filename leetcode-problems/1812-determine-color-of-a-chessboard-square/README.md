@@ -6,17 +6,13 @@ Problem: https://leetcode.com/problems/determine-color-of-a-chessboard-square/
 
 I have to discussion with my friends and founded esiest solution is switch case:
 
-```
-switch (coordinates) {
-  case "a1":
-    return false
-  case "a2":
-    return true
-  case "a3":
-    return false
+```rust
+match coordinates {
+  "a1" => false,
+  "a2" => true,
+  "a3" => false,
   ...
-  case "h3":
-    return true
+  "h3" => true,
   ...
 }
 ```
