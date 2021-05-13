@@ -2,6 +2,12 @@
 
 Problem: https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 
+## Idea
+
+I use a hashtable to save the values of the nodes in the BST.
+
+Each time when we insert the value of a new node into the hashtable, we check if the hashtable contains `k - node.val`.
+
 ## Example
 
 ```go

@@ -2,6 +2,10 @@
 
 Problem: https://leetcode.com/problems/path-sum-iii/
 
+## Idea
+
+I dont think... I do.
+
 ## Example
 
 ```go
