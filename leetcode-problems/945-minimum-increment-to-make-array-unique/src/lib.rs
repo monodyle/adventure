@@ -41,6 +41,22 @@ pub fn min_increment_for_unique_2(mut nums: Vec<i32>) -> i32 {
         .sum()
 }
 
+pub fn min_increment_for_unique_3(nums: Vec<i32>) -> i32 {
+    if nums.is_empty() {
+        return 0;
+    }
+
+    let mut freq = vec![0; (*nums.iter().max().unwrap() as usize) + nums.len() + 1];
+    nums.iter().for_each(|&i| freq[i as usize] += 1);
+    freq.into_iter()
+        .scan(0, |dup, mut n| {
+            n += *dup;
+            *dup = (n - 1).max(0);
+            Some(*dup)
+        })
+        .sum()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -66,6 +82,18 @@ mod tests {
     #[test]
     fn example_2_2() {
         let result = min_increment_for_unique_2(vec![3, 2, 1, 2, 1, 7]);
+        assert_eq!(result, 6);
+    }
+
+    #[test]
+    fn example_1_3() {
+        let result = min_increment_for_unique_3(vec![1, 2, 2]);
+        assert_eq!(result, 1);
+    }
+
+    #[test]
+    fn example_2_3() {
+        let result = min_increment_for_unique_3(vec![3, 2, 1, 2, 1, 7]);
         assert_eq!(result, 6);
     }
 }
