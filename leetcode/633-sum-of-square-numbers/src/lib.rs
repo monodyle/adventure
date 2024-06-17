@@ -3,16 +3,16 @@ pub fn judge_square_sum(c: i32) -> bool {
         return true;
     }
 
-    let mut s: i64 = 0;
-    let mut e = (c as f32).sqrt().round() as i64;
+    let mut a: i64 = 0;
+    let mut b = (c as f32).sqrt().round() as i64;
 
-    while s <= e {
-        if s * s + e * e < c as i64 {
-            s += 1;
-        } else if s * s + e * e > c as i64 {
-            e -= 1;
-        } else {
+    while a <= b {
+        if a * a + b * b == c as i64 {
             return true;
+        } else if a * a + b * b < c as i64 {
+            a += 1;
+        } else {
+            b -= 1;
         }
     }
 
