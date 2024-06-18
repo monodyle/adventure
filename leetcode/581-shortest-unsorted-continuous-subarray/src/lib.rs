@@ -33,7 +33,7 @@ mod tests {
     #[test]
     fn example_1() {
         let result = find_unsorted_subarray(vec![2, 6, 4, 8, 10, 9, 15]);
-        assert_eq!(result, 5 - 1);
+        assert_eq!(result, 5);
     }
 
     #[test]
