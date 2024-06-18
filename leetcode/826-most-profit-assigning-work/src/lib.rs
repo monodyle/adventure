@@ -1,4 +1,12 @@
-pub fn max_profit_assignment(difficulty: Vec<i32>, profit: Vec<i32>, mut worker: Vec<i32>) -> i32 {
+pub fn max_profit_assignment(
+    difficulty: Vec<i32>,
+    profit: Vec<i32>,
+    mut worker: Vec<i32>,
+) -> i32 {
+    /* if difficulty.is_empty() || worker.is_empty() {
+        return 0;
+    } */
+
     let mut jobs = difficulty
         .into_iter()
         .zip(profit.into_iter())
@@ -7,14 +15,31 @@ pub fn max_profit_assignment(difficulty: Vec<i32>, profit: Vec<i32>, mut worker:
 
     worker.sort_unstable_by_key(|&w| -w);
 
-    worker.iter().fold(0, |mut acc, &w| {
+    worker.iter().fold(0, |acc, &w| {
         while jobs.last().is_some() && jobs[jobs.len() - 1].0 > w {
             jobs.pop();
         }
         if let Some(&job) = jobs.last() {
-            acc += job.1;
+            return acc + job.1;
         }
         acc
+    })
+}
+
+pub fn max_profit_assignment_2(difficulty: Vec<i32>, profit: Vec<i32>, worker: Vec<i32>) -> i32 {
+    let min = *difficulty.iter().min().unwrap() as usize - 1;
+    let max = *difficulty.iter().max().unwrap() as usize;
+    let mut earn = vec![0; max - min + 1];
+    for (&d, &p) in difficulty.iter().zip(profit.iter()) {
+        let i = d as usize - min;
+        earn[i] = earn[i].max(p);
+    }
+    for i in 2..earn.len() {
+        earn[i] = earn[i].max(earn[i - 1])
+    }
+    worker.iter().fold(0, |acc, &w| {
+        let i = (w as usize).max(min).min(max) - min;
+        acc + earn[i]
     })
 }
 
