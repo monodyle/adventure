@@ -1,9 +1,11 @@
-pub fn is_happy_map(mut n: i32) -> bool {
+pub fn is_happy_set(mut n: i32) -> bool {
     let mut seen = std::collections::HashSet::new();
 
     fn process(n: i32) -> i32 {
         if n == 0 {
             0
+        } else if n < 10 {
+            n.pow(2)
         } else {
             (n % 10).pow(2) + process(n / 10)
         }
@@ -14,17 +16,19 @@ pub fn is_happy_map(mut n: i32) -> bool {
             return false;
         }
         seen.insert(n);
-        n = if n < 10 { n * n } else { process(n) };
+        n = process(n);
         if n == 1 || n == 10 || n == 100 {
             return true;
         }
     }
 }
 
-pub fn is_happy(n: i32) -> bool {
+pub fn is_happy_sf(n: i32) -> bool {
     fn process(n: i32) -> i32 {
         if n == 0 {
             0
+        } else if n < 10 {
+            n.pow(2)
         } else {
             (n % 10).pow(2) + process(n / 10)
         }
@@ -43,6 +47,26 @@ pub fn is_happy(n: i32) -> bool {
     }
 
     false
+}
+
+pub fn is_happy(mut n: i32) -> bool {
+    fn process(n: i32) -> i32 {
+        if n == 0 {
+            0
+        } else if n < 10 {
+            n.pow(2)
+        } else {
+            (n % 10).pow(2) + process(n / 10)
+        }
+    }
+    while n > 9 {
+        n = process(n);
+    }
+    if n == 1 || n == 7 {
+        true
+    } else {
+        false
+    }
 }
 
 #[cfg(test)]
