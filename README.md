@@ -1,4 +1,4 @@
 ## Algorithms Adventure
 
-This repository is my adventure of algorithms, I challenged myself to find
-solution for the algorithms on popular codefight websites.
+This repository documents my journey through algorithm challenges, where I struggled to 
+solving problems from popular codeflight platforms.
