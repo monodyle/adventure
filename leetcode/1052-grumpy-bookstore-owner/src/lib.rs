@@ -1,29 +1,21 @@
 pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, minutes: i32) -> i32 {
-    let satisfied =
-        customers.iter().enumerate().fold(
-            0,
-            |acc, (i, s)| {
-                if grumpy[i] == 1 {
-                    acc + s
-                } else {
-                    acc
-                }
-            },
-        );
-    let mut total = satisfied;
+    let mut total = 0;
+    let mut window = 0;
     let mut max = 0;
 
-    for i in 0..(customers.len() - (minutes as usize) + 1) {
-        for j in i..i + (minutes as usize) {
-            if grumpy[j] == 0 {
-                total += customers[j]
-            }
+    for i in 0..customers.len() {
+        if grumpy[i] == 0 {
+            total += customers[i]
+        } else {
+            window += customers[i]
         }
-        max = max.max(total);
-        total = satisfied;
+        if i >= minutes as usize && grumpy[i - minutes as usize] == 1 {
+            window -= customers[i - minutes as usize]
+        }
+        max = max.max(window)
     }
 
-    max
+    max + total
 }
 
 #[cfg(test)]
