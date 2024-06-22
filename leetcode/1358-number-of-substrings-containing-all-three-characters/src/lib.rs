@@ -1,13 +1,14 @@
 pub fn number_of_substrings(s: String) -> i32 {
+    let a = b'a';
     let s = s.as_bytes();
     let mut ans = 0;
-    let mut cnt = vec![0; 3];
+    let mut cnt = vec![0, 0, 0];
 
     let mut cur = 0;
     for &char in s {
-        cnt[(char - b'a') as usize] += 1;
+        cnt[(char - a) as usize] += 1;
         while cnt.iter().all(|&c| c > 0) {
-            cnt[(s[cur] - b'a') as usize] -= 1;
+            cnt[(s[cur] - a) as usize] -= 1;
             cur += 1;
         }
         ans += cur;
