@@ -1,25 +1,22 @@
 pub fn number_of_subarrays_sliding(nums: Vec<i32>, k: i32) -> i32 {
-    let mut nice = 0;
     let (mut odd, mut cnt, mut cur) = (0, 0, 0);
 
-    for n in &nums {
+    nums.iter().fold(0, |acc, &n| {
         if n % 2 == 1 {
             odd += 1;
             cnt = 0;
         }
 
         while odd == k {
-            if &nums[cur]  % 2 == 1 {
+            if &nums[cur] % 2 == 1 {
                 odd -= 1;
             }
             cnt += 1;
             cur += 1;
         }
 
-        nice += cnt
-    }
-
-    nice
+        acc + cnt
+    })
 }
 
 pub fn number_of_subarrays(nums: Vec<i32>, k: i32) -> i32 {
