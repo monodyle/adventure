@@ -1,6 +1,26 @@
+pub fn min_k_bit_flips_queue(nums: Vec<i32>, k: i32) -> i32 {
+    let (mut min, k, n) = (0, k as usize, nums.len());
+    let mut queue = std::collections::VecDeque::new();
+
+    for (bit, index) in nums.into_iter().map(|b| b as usize).zip(0..) {
+        while queue.front().is_some_and(|&i| i <= index) {
+            queue.pop_front();
+        }
+
+        if queue.len() & 1 == bit {
+            if index + k > n {
+                return -1;
+            }
+            queue.push_back(index + k);
+            min += 1
+        }
+    }
+
+    min
+}
+
 pub fn min_k_bit_flips(mut nums: Vec<i32>, k: i32) -> i32 {
-    let mut min = 0;
-    let mut cur = 0;
+    let (mut min, mut cur) = (0, 0);
 
     while cur + k as usize <= nums.len() {
         if nums[cur] == 0 {
