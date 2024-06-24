@@ -1,0 +1,6 @@
+[package]
+name = "minimum-number-of-k-consecutive-bit-flips"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
