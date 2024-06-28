@@ -1,17 +1,14 @@
 pub fn maximum_importance(n: i32, roads: Vec<Vec<i32>>) -> i64 {
-    let mut graph = vec![0; n as usize];
-    for road in roads {
-        graph[road[0] as usize] += 1;
-        graph[road[1] as usize] += 1;
-    }
-
+    let mut graph = roads.iter().fold(vec![0i64; n as usize], |mut acc, road| {
+        acc[road[0] as usize] += 1;
+        acc[road[1] as usize] += 1;
+        acc
+    });
     graph.sort_unstable();
 
-    let mut value: i64 = 1;
     let mut total: i64 = 0;
-    for node in graph {
-        total += value * node;
-        value += 1;
+    for i in 1..=n {
+        total += graph[i as usize - 1] * i as i64;
     }
 
     total
