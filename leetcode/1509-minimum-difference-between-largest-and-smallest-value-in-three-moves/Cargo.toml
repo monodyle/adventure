@@ -1,0 +1,6 @@
+[package]
+name = "minimum-difference-between-largest-and-smallest-value-in-three-moves"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
