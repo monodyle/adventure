@@ -13,25 +13,24 @@ impl ListNode {
 }
 
 pub fn merge_nodes(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut merged = vec![];
-    let mut sum = 0;
-    let mut cur: Option<Box<ListNode>> = head;
-    while let Some(node) = cur {
-        if node.val == 0 && sum != 0 {
-            merged.push(sum);
-            sum = 0;
-        } else {
+    let mut ans: Option<Box<ListNode>> = None;
+    let mut tail = &mut ans;
+    let mut cur = head;
+
+    while let Some(mut node) = cur {
+        let mut sum = node.val;
+        loop {
+            node = node.next.unwrap();
+            if node.val == 0 {
+                cur = node.next.take();
+                node.val = sum;
+                tail = &mut tail.insert(node).next;
+                break;
+            }
             sum += node.val;
         }
-        cur = node.next;
     }
 
-    let mut ans: Option<Box<ListNode>> = None;
-    for &val in merged.iter().rev() {
-        let mut node = Box::new(ListNode::new(val));
-        node.next = ans;
-        ans = Some(node);
-    }
     ans
 }
 
