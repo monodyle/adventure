@@ -1,14 +1,10 @@
-pub fn num_water_bottles(num_bottles: i32, num_exchange: i32) -> i32 {
-    let mut total = 0;
-    let mut filled = num_bottles;
-    let mut empty = 0;
-    while filled + empty >= num_exchange {
-        total += filled;
-        empty += filled;
-        filled = empty / num_exchange;
-        empty -= num_exchange * (empty / num_exchange);
+pub fn num_water_bottles(mut num_bottles: i32, num_exchange: i32) -> i32 {
+    let mut total = num_bottles;
+    while num_bottles >= num_exchange {
+        total += num_bottles / num_exchange;
+        num_bottles = num_bottles / num_exchange + num_bottles % num_exchange;
     }
-    total + filled
+    total
 }
 
 #[cfg(test)]
