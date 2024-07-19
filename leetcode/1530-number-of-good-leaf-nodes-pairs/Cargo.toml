@@ -1,0 +1,6 @@
+[package]
+name = "number-of-good-leaf-nodes-pairs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
