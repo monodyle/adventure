@@ -1,0 +1,6 @@
+[package]
+name = "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
