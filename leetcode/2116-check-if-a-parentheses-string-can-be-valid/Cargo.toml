@@ -1,0 +1,6 @@
+[package]
+name = "check-if-a-parentheses-string-can-be-valid"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
