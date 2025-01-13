@@ -1,14 +1,10 @@
 pub fn minimum_length(s: String) -> i32 {
-    let mut map = [0; 26];
+    let mut freq = [0; 26];
     for c in s.chars() {
-        let i = c as usize - 97;
-        map[i] += 1;
-        if map[i] == 3 {
-            map[i] -= 2;
-        }
+        let i = c as usize - 'a' as usize;
+        freq[i] += if freq[i] < 2 { 1 } else { -1 }
     }
-
-    map.iter().fold(0, |a, x| a + x)
+    freq.iter().sum()
 }
 
 #[cfg(test)]
